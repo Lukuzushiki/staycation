@@ -16,13 +16,13 @@ test("Should render loading/spinner", () => {
   expect(container.querySelector("span")).toBeInTheDocument();
 });
 
-test("Should render <a> tag</a>", () => {
+test("Should render <a> tag </a>", () => {
   const { container } = render(<Button type="link" isExternal></Button>);
 
   expect(container.querySelector("a")).toBeInTheDocument();
 });
 
-test("Should render <Link> component</Link>", () => {
+test("Should render <Link> component </Link>", () => {
   const { container } = render(
     <Router>
       <Button href="" type="link"></Button>
