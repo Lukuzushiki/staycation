@@ -31,9 +31,9 @@ $grays: map-merge(("100": $gray-100,
   $grays);
 
 $blue: #007bff !default;
-$indigo: #6610f2 !default;
+$indigo: #2B4CDD !default;
 $purple: #6f42c1 !default;
-$pink: #e83e8c !default;
+$pink: #FF4968 !default;
 $red: #dc3545 !default;
 $orange: #fd7e14 !default;
 $yellow: #ffc107 !default;
@@ -252,18 +252,8 @@ $embed-responsive-aspect-ratios: join(((21 9),
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif: -apple-system,
-BlinkMacSystemFont,
-"Segoe UI",
-Roboto,
-"Helvetica Neue",
-Arial,
-"Noto Sans",
-sans-serif,
-"Apple Color Emoji",
-"Segoe UI Emoji",
-"Segoe UI Symbol",
-"Noto Color Emoji" !default;
+$font-family-sans-serif: "Poppins",
+sans-serif;
 $font-family-monospace: SFMono-Regular,
 Menlo,
 Monaco,
@@ -287,7 +277,7 @@ $font-weight-bolder: bolder !default;
 $font-weight-base: $font-weight-normal !default;
 $line-height-base: 1.5 !default;
 
-$h1-font-size: $font-size-base * 2.5 !default;
+$h1-font-size: $font-size-base * 2.625 !default;
 $h2-font-size: $font-size-base * 2 !default;
 $h3-font-size: $font-size-base * 1.75 !default;
 $h4-font-size: $font-size-base * 1.5 !default;
