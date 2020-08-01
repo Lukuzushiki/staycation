@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Header from "parts/Header";
 import Fade from "react-reveal/Fade";
+import { connect } from "react-redux";
 
 import Button from "elements/Button";
 import Stepper, {
@@ -17,7 +18,9 @@ import Completed from "parts/Checkout/Completed";
 
 import ItemDetails from "json/itemDetails.json";
 
-export default class Checkout extends Component {
+import { checkoutBooking } from "store/actions/checkout";
+
+class Checkout extends Component {
   state = {
     data: {
       firstName: "",
@@ -44,10 +47,9 @@ export default class Checkout extends Component {
   }
   render() {
     const { data } = this.state;
+    const { checkout } = this.props;
 
-    const checkout = {
-      duration: 3,
-    };
+    if (!checkout) return <p>Tidak ada</p>;
 
     const steps = {
       bookingInformation: {
@@ -179,3 +181,9 @@ export default class Checkout extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  checkout: state.checkout,
+});
+
+export default connect(mapStateToProps)(Checkout);

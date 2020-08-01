@@ -1,5 +1,5 @@
 import React from "react";
-import Fade from "react-reveal/Fade"
+import Fade from "react-reveal/Fade";
 
 import TestimoniAccent from "assets/images/testimonial-landingpage-frame.jpg";
 
@@ -17,7 +17,7 @@ export default function Testimoni({ data }) {
               style={{ margin: `30px 0 0 30px` }}
             >
               <img
-                src={data.imageUrl}
+                src={`${process.env.REACT_APP_HOST}/${data.imageUrl}`}
                 alt="Testimonial"
                 className="position-absolute"
                 style={{ zIndex: 1 }}

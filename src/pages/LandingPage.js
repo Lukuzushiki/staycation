@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import Header from "parts/Header";
 import Hero from "parts/Hero";
@@ -7,31 +8,47 @@ import Category from "parts/Categories";
 import Testimoni from "parts/Testimoni";
 import Footer from "parts/Footer";
 
-import landingPage from "json/landingPage.json";
+import { fetchPage } from "store/actions/page";
 
-export default class LandingPage extends Component {
+class LandingPage extends Component {
   constructor(props) {
     super(props);
     this.refMostPicked = React.createRef();
   }
 
-  compenentDidMount() {
+  componentDidMount() {
     window.title = "Staycation | Home";
     window.scrollTo(0, 0);
+
+    if (!this.props.page.landingPage)
+      this.props.fetchPage(
+        `${process.env.REACT_APP_HOST}/api/v1/member/landing-page`,
+        "landingPage"
+      );
   }
+
   render() {
+    const { page } = this.props;
+
+    if (!page.hasOwnProperty("landingPage")) return null;
     return (
       <>
         <Header {...this.props}></Header>
-        <Hero refMostPicked={this.refMostPicked} data={landingPage.hero} />
+        <Hero refMostPicked={this.refMostPicked} data={page.landingPage.hero} />
         <MostPicked
           refMostPicked={this.refMostPicked}
-          data={landingPage.mostPicked}
+          data={page.landingPage.mostPicked}
         />
-        <Category data={landingPage.categories} />
-        <Testimoni data={landingPage.testimonial} />
+        <Category data={page.landingPage.category} />
+        <Testimoni data={page.landingPage.testimonial} />
         <Footer />
       </>
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  page: state.page,
+});
+
+export default connect(mapStateToProps, { fetchPage })(LandingPage);
