@@ -5,10 +5,10 @@ import Fade from "react-reveal/Fade";
 import Button from "elements/Button";
 import BrandIcon from "parts/iconText";
 
-export default function Header({ isCentered }: { isCentered?: boolean }) {
+export default function Header({ isCentered }) {
   const location = useLocation();
 
-  const getNavLinkClass = (path: string) => {
+  const getNavLinkClass = (path) => {
     return location.pathname === path ? " active" : "";
   };
 
