@@ -1,7 +1,12 @@
 {
   "short_name": "Staycation",
-  "name": "Staycation Portfolio Demo",
+  "name": "Staycation Showcase",
   "icons": [
+    {
+      "src": "favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",

@@ -17,7 +17,7 @@ class LandingPage extends Component {
   }
 
   componentDidMount() {
-    document.title = "Staycation Portfolio | Curated Stays";
+    document.title = "Staycation Showcase | Curated Stays";
     window.scrollTo(0, 0);
 
     if (!this.props.page.landingPage)

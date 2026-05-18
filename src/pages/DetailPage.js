@@ -32,7 +32,7 @@ export default function DetailPage() {
 
   if (!pageData) return null;
 
-  document.title = `${pageData.title} | Staycation Portfolio`;
+  document.title = `${pageData.title} | Staycation Showcase`;
 
   const breadcrumb = [
     { pageTitle: "Home", pageHref: "" },

@@ -41,7 +41,7 @@ class Checkout extends Component {
   };
 
   componentDidMount() {
-    document.title = "Checkout | Staycation Portfolio";
+    document.title = "Checkout | Staycation Showcase";
     window.scroll(0, 0);
   }
 
