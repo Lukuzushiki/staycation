@@ -17,31 +17,35 @@ const BookingForm = ({ ItemDetails, startBooking }) => {
     },
   });
 
+  const startDate = data.date.startDate;
+  const endDate = data.date.endDate;
+
   useEffect(() => {
-    const startDate = new Date(data.date.startDate);
-    const endDate = new Date(data.date.endDate);
-    const countDuration = (endDate - startDate) / (1000 * 3600 * 24) + 1;
+    const nextStartDate = new Date(startDate);
+    const nextEndDate = new Date(endDate);
+    const countDuration =
+      (nextEndDate - nextStartDate) / (1000 * 3600 * 24) + 1;
 
     if (countDuration !== data.duration) {
       setData((prev) => ({ ...prev, duration: countDuration }));
     }
-  }, [data.date]);
+  }, [data.duration, endDate, startDate]);
 
   useEffect(() => {
-    const startDate = new Date(data.date.startDate);
-    const endDate = new Date(startDate);
-    endDate.setDate(startDate.getDate() + Number(data.duration) - 1);
+    const nextStartDate = new Date(startDate);
+    const nextEndDate = new Date(nextStartDate);
+    nextEndDate.setDate(nextStartDate.getDate() + Number(data.duration) - 1);
 
-    if (data.date.endDate.toDateString() !== endDate.toDateString()) {
+    if (new Date(endDate).toDateString() !== nextEndDate.toDateString()) {
       setData((prev) => ({
         ...prev,
         date: {
           ...prev.date,
-          endDate,
+          endDate: nextEndDate,
         },
       }));
     }
-  }, [data.duration]);
+  }, [data.duration, endDate, startDate]);
 
   const updateData = (e) => {
     setData((prev) => ({

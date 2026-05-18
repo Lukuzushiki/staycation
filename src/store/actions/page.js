@@ -1,21 +1,20 @@
 import { FETCH_PAGE } from "../types";
-import axios from "configs/axios";
+import { getMockPage } from "mocks/staycation";
 
 export const fetchPage = (url, page) => (dispatch) => {
-  return axios
-    .get(url)
-    .then((response) => {
+  return getMockPage(url)
+    .then((data) => {
       dispatch({
         type: FETCH_PAGE,
         payload: {
-          [page]: response.data,
+          [page]: data,
         },
       });
     })
-    .catch((response) => {
+    .catch((error) => {
       dispatch({
         type: FETCH_PAGE,
-        payload: response.error,
+        payload: error,
       });
     });
 };

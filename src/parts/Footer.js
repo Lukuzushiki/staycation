@@ -11,75 +11,74 @@ export default function Footer() {
           <div className="col-auto" style={{ width: 350 }}>
             <IconText />
             <p className="brand-tagline">
-              We kaboom your beauty holiday instantly and memorable.
+              A polished travel-booking showcase with stable mock data and a
+              complete end-to-end demo flow.
             </p>
           </div>
           <div className="col-auto mr-5">
-            <h6 className="mt-2">For Beginners</h6>
+            <h6 className="mt-2">Explore</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <Button type="link" href="/register">
-                  New Account
+                <Button type="link" isExternal href="#most-picked">
+                  Featured Stays
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button type="link" href="/properties">
-                  Start Booking a Room
+                <Button type="link" isExternal href="#collections">
+                  Browse Collections
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button type="link" href="/use-payment">
-                  Use Payments
+                <Button type="link" isExternal href="#reviews">
+                  Guest Reviews
                 </Button>
               </li>
             </ul>
           </div>
           <div className="col-2 mr-5">
-            <h6 className="mt-2">Explore Us</h6>
+            <h6 className="mt-2">Project Notes</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                <Button type="link" href="/careers">
-                  Our Careers
+                <Button type="link" href="/">
+                  Landing Page
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button type="link" href="/privacy">
-                  Privacy
+                <Button type="link" href="/checkout">
+                  Checkout Flow
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button type="link" href="/terms">
-                  Terms & Conditions
-                </Button>
+                <span>Mock API, local assets, portfolio-ready presentation</span>
               </li>
             </ul>
           </div>
           <div className="col-3">
-            <h6 className="mt-2">Connect Us</h6>
+            <h6 className="mt-2">Connect</h6>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
                 <Button
                   isExternal
                   type="link"
-                  href="mailto:support@staycation.id"
+                  href="mailto:hello@staycation-portfolio.demo"
                 >
-                  support@staycation.id
+                  hello@staycation-portfolio.demo
                 </Button>
               </li>
               <li className="list-group-item">
-                <Button isExternal type="link" href="tel:+622122081996">
-                  021 - 2208 - 1996
+                <Button isExternal type="link" href="tel:+6281234567890">
+                  +62 812 3456 7890
                 </Button>
               </li>
               <li className="list-group-item">
-                <span>Staycation, Kemang, Jakarta</span>
+                <span>Remote-first demo based in Jakarta, Indonesia</span>
               </li>
             </ul>
           </div>
         </div>
         <div className="row">
           <div className="col text-center copyrights">
-            Copyright 2019 · All rights reserved · Staycation
+            Copyright 2026 | Staycation Portfolio Demo
           </div>
         </div>
       </div>

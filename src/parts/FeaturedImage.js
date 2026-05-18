@@ -1,5 +1,6 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
+import imageUrl from "utils/imageUrl";
 
 export default function FeaturedImage({ data }) {
   return (
@@ -18,7 +19,7 @@ export default function FeaturedImage({ data }) {
                   <figure className="img-wrapper">
                     <img
                       className="img-cover"
-                      src={`${process.env.REACT_APP_HOST}/${item.imageUrl}`}
+                      src={imageUrl(item.imageUrl)}
                       alt={item._id}
                     />
                   </figure>

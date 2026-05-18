@@ -2,6 +2,7 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 
 import { InputText } from "elements/Form";
+import imageUrl from "utils/imageUrl";
 
 export default function BookingInformation(props) {
   const { data, ItemDetails, checkout } = props;
@@ -15,7 +16,7 @@ export default function BookingInformation(props) {
               <div className="card">
                 <figure className="img-wrapper" style={{ height: 270 }}>
                   <img
-                    src={`${process.env.REACT_APP_HOST}/${ItemDetails.imageId[0].imageUrl}`}
+                    src={imageUrl(ItemDetails.imageId[0].imageUrl)}
                     alt={ItemDetails.title}
                     className="img-cover"
                   />

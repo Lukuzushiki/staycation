@@ -17,7 +17,6 @@ import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
 
 import { submitBooking } from "store/actions/checkout";
-import { checkoutBooking } from "store/actions/checkout";
 
 class Checkout extends Component {
   state = {
@@ -42,6 +41,7 @@ class Checkout extends Component {
   };
 
   componentDidMount() {
+    document.title = "Checkout | Staycation Portfolio";
     window.scroll(0, 0);
   }
 
@@ -50,7 +50,7 @@ class Checkout extends Component {
     const payload = new FormData();
     const { checkout } = this.props;
 
-    payload.append("firstNames", data.firstName);
+    payload.append("firstName", data.firstName);
     payload.append("lastName", data.lastName);
     payload.append("email", data.email);
     payload.append("phoneNumber", data.phone);
@@ -77,7 +77,22 @@ class Checkout extends Component {
     const { checkout } = this.props;
     const { page } = this.props;
 
-    if (!checkout) return <p>Tidak ada</p>;
+    if (!checkout) {
+      return (
+        <>
+          <Header isCentered />
+          <section className="container text-center" style={{ padding: "80px 0" }}>
+            <h3 className="mb-3">No active booking yet</h3>
+            <p className="text-gray-500 mb-4">
+              Start from a property detail page to preview the full mock checkout flow.
+            </p>
+            <Button className="btn px-5" type="link" href="/" isPrimary hasShadow>
+              Back to Home
+            </Button>
+          </section>
+        </>
+      );
+    }
 
     const steps = {
       bookingInformation: {
@@ -196,7 +211,7 @@ class Checkout extends Component {
                     isBlock
                     isPrimary
                     hasShadow
-                    href=""
+                    href="/"
                   >
                     Back to Home
                   </Button>

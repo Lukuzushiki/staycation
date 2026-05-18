@@ -7,10 +7,7 @@ import BrandIcon from "parts/iconText";
 
 export default function Header({ isCentered }) {
   const location = useLocation();
-
-  const getNavLinkClass = (path) => {
-    return location.pathname === path ? " active" : "";
-  };
+  const isHomePage = location.pathname === "/";
 
   if (isCentered) {
     return (
@@ -18,7 +15,7 @@ export default function Header({ isCentered }) {
         <header className="spacing-sm">
           <div className="container">
             <nav className="navbar navbar-expand-lg navbar-light">
-              <Button className="brand-text-icon mx-auto" href="" type="link">
+              <Button className="brand-text-icon mx-auto" href="/" type="link">
                 Stay<span className="text-gray-900">cation.</span>
               </Button>
             </nav>
@@ -36,24 +33,39 @@ export default function Header({ isCentered }) {
             <BrandIcon />
             <div className="collapse navbar-collapse">
               <ul className="navbar-nav ml-auto">
-                <li className={`nav-item${getNavLinkClass("/")}`}>
+                <li className={`nav-item${isHomePage ? " active" : ""}`}>
                   <Button className="nav-link" type="link" href="/">
                     Home
                   </Button>
                 </li>
-                <li className={`nav-item${getNavLinkClass("/browse-by")}`}>
-                  <Button className="nav-link" type="link" href="/browse-by">
-                    Browse by
+                <li className="nav-item">
+                  <Button
+                    className="nav-link"
+                    type="link"
+                    isExternal
+                    href="#most-picked"
+                  >
+                    Featured Stays
                   </Button>
                 </li>
-                <li className={`nav-item${getNavLinkClass("/stories")}`}>
-                  <Button className="nav-link" type="link" href="/stories">
-                    Stories
+                <li className="nav-item">
+                  <Button
+                    className="nav-link"
+                    type="link"
+                    isExternal
+                    href="#collections"
+                  >
+                    Collections
                   </Button>
                 </li>
-                <li className={`nav-item${getNavLinkClass("/agents")}`}>
-                  <Button className="nav-link" type="link" href="/agents">
-                    Agents
+                <li className="nav-item">
+                  <Button
+                    className="nav-link"
+                    type="link"
+                    isExternal
+                    href="#reviews"
+                  >
+                    Reviews
                   </Button>
                 </li>
               </ul>

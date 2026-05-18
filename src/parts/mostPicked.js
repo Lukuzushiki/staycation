@@ -2,10 +2,11 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 
 import Button from "elements/Button";
+import imageUrl from "utils/imageUrl";
 
 export default function mostPicked(props) {
   return (
-    <section className="container" ref={props.refMostPicked}>
+    <section className="container" ref={props.refMostPicked} id="most-picked">
       <Fade bottom>
         <h4 className="mb-3">Most Picked</h4>
 
@@ -24,11 +25,7 @@ export default function mostPicked(props) {
                     </div>
                     <figure className="img-wrapper">
                       <img
-                        src={
-                          item.imageId[0]
-                            ? `${process.env.REACT_APP_HOST}/${item.imageId[0].imageUrl}`
-                            : ""
-                        }
+                        src={item.imageId[0] ? imageUrl(item.imageId[0].imageUrl) : ""}
                         alt={item.title}
                         className="img-cover"
                       />

@@ -19,13 +19,13 @@ export default function Payment(props) {
         <div className="row justify-content-center align-items-center">
           <div className="col-5 border-right oy-5" style={{ paddingRight: 80 }}>
             <Fade delay={300}>
-              <p className="mb-4">Traasfer Pembayaran:</p>
+              <p className="mb-4">Transfer details</p>
               <p>Tax: {tax}%</p>
               <p>Sub Total: ${subTotal} USD</p>
               <p>Total: ${grandTotal} USD</p>
               <div className="row mt-4">
                 <div className="col-3 text-align-right">
-                  <img src={logoBca} alt="Bankk Central Asia" width="60" />
+                  <img src={logoBca} alt="Bank Central Asia" width="60" />
                 </div>
                 <div className="col">
                   <dl>
@@ -51,16 +51,16 @@ export default function Payment(props) {
 
           <div className="col-5 py-5" style={{ paddingLeft: 80 }}>
             <Fade delay={600}>
-              <label htmlFor="proofPayment">Upload Bukti Transfer</label>
+              <label htmlFor="proofPayment">Upload payment proof</label>
               <InputFile
-                accept="image/#"
+                accept="image/*"
                 id="proofPayment"
                 name="proofPayment"
                 value={data.proofPayment}
                 onChange={props.onChange}
               />
 
-              <label htmlFor="bankName">Asal Bank</label>
+              <label htmlFor="bankName">Origin bank</label>
               <InputText
                 id="bankName"
                 name="bankName"
@@ -68,7 +68,7 @@ export default function Payment(props) {
                 onChange={props.onChange}
               />
 
-              <label htmlFor="bankHolder">Nama Pengirim</label>
+              <label htmlFor="bankHolder">Sender name</label>
               <InputText
                 id="bankHolder"
                 name="bankHolder"

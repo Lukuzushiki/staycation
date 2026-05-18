@@ -1,5 +1,6 @@
 import React from "react";
 import ReactHtmlParser from "react-html-parser";
+import imageUrl from "utils/imageUrl";
 
 export default function PageDetailDescription({ data }) {
   return (
@@ -18,7 +19,7 @@ export default function PageDetailDescription({ data }) {
                 >
                   <img
                     width="38"
-                    src={`${process.env.REACT_APP_HOST}/${feature.imageUrl}`}
+                    src={imageUrl(feature.imageUrl)}
                     alt={feature.name}
                     className="d-block mb-2"
                   />{" "}

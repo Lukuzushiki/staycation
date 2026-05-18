@@ -2,12 +2,17 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 
 import Button from "elements/Button";
+import imageUrl from "utils/imageUrl";
 
 export default function Categories({ data }) {
   return data.map((category, index1) => {
     if (category.itemId.length === 0) return null;
     return (
-      <section className="container" key={`category-${index1}`}>
+      <section
+        className="container"
+        key={`category-${index1}`}
+        id={index1 === 0 ? "collections" : undefined}
+      >
         <Fade bottom>
           <h4 className="mb-3 font-weight-medium">{category.name}</h4>
 
@@ -28,11 +33,7 @@ export default function Categories({ data }) {
                       )}
                       <figure className="img-wrapper" style={{ height: 180 }}>
                         <img
-                          src={
-                            item.imageId[0]
-                              ? `${process.env.REACT_APP_HOST}/${item.imageId[0].imageUrl}`
-                              : ""
-                          }
+                          src={item.imageId[0] ? imageUrl(item.imageId[0].imageUrl) : ""}
                           alt={item.title}
                           className="img-cover"
                         />

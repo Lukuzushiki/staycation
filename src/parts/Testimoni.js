@@ -5,11 +5,12 @@ import TestimoniAccent from "assets/images/testimonial-landingpage-frame.jpg";
 
 import Star from "elements/Star";
 import Button from "elements/Button";
+import imageUrl from "utils/imageUrl";
 
 export default function Testimoni({ data }) {
   return (
     <Fade bottom>
-      <section className="container">
+      <section className="container" id="reviews">
         <div className="row align-items-center">
           <div className="col-auto" style={{ marginRight: 70 }}>
             <div
@@ -17,7 +18,7 @@ export default function Testimoni({ data }) {
               style={{ margin: `30px 0 0 30px` }}
             >
               <img
-                src={`${process.env.REACT_APP_HOST}/${data.imageUrl}`}
+                src={imageUrl(data.imageUrl)}
                 alt="Testimonial"
                 className="position-absolute"
                 style={{ zIndex: 1 }}
@@ -47,9 +48,9 @@ export default function Testimoni({ data }) {
                 hasShadow
                 isPrimary
                 type="link"
-                href={`/testimonial/${data._id}`}
+                href="/"
               >
-                Read Their Story
+                Browse More Stays
               </Button>
             </div>
           </div>

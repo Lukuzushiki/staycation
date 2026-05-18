@@ -23,7 +23,6 @@ export default function DetailPage() {
   const pageData = page[id];
 
   useEffect(() => {
-    document.title = "Detail Page";
     window.scrollTo(0, 0);
 
     if (!pageData) {
@@ -32,6 +31,8 @@ export default function DetailPage() {
   }, [dispatch, id, pageData]);
 
   if (!pageData) return null;
+
+  document.title = `${pageData.title} | Staycation Portfolio`;
 
   const breadcrumb = [
     { pageTitle: "Home", pageHref: "" },
